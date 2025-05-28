@@ -114,11 +114,11 @@ export default function MainInterface() {
 				</div>
 
 				<div className="relative">
-					<div className={`w-8 h-8 bg-emerald-700 rounded flex flex-col justify-center items-center ${menuOpened ? 'relative': 'gap-2'} relative z-10`} onClick={handleMenuClick}>
+					<div className={`w-8 h-8 bg-slate-800 rounded flex flex-col justify-center items-center ${menuOpened ? 'relative': 'gap-2'} relative z-10`} onClick={handleMenuClick}>
 						<div className={`w-5 h-[2px] bg-white ${menuOpened ? 'absolute inset-0 m-[auto] rotate-45' : null}`}></div>
 						<div className={`w-5 h-[2px] bg-white ${menuOpened ? 'absolute inset-0 m-[auto] -rotate-45' : null}`}></div>
 					</div>
-					<div className={`absolute w-[70vw] h-50 top-0 right-0 bg-emerald-700 ${menuOpened ? 'visible' : 'hidden'}`}>
+					<div className={`absolute w-[70vw] h-50 top-0 right-0 bg-slate-800 ${menuOpened ? 'visible' : 'hidden'}`}>
 						<div className="mt-10 text-sm text-white font-light">
 							<section className="mx-5 mt-2 p-1"><a href="https://github.com/sharifulbb10/quick-blood-donor-finder-badhon-ngc">View Source Code & improve it</a></section>
 							<section className="mx-5 mt-4 p-1"><a href="mailto:sharifulbb10@gmail.com?subject=Found a problem in your BADON QUICK DONOR FINDER project">Report a bug</a></section>
@@ -137,10 +137,10 @@ export default function MainInterface() {
 				</a>
 			</div>
 
-			<div className="text-sm mx-4 mt-6">
-				<div className="mb-2">
-					<p className="inline-block w-30 mr-2">Blood Group</p>
-					<select className="text-right pl-2 border-1 px-1 py-[4px] rounded" onChange={bloodGroupQuery}>
+			<div className="text-sm mx-2 p-2 mt-6 bg-green-100">
+				<div className="mb-2 flex items-center">
+					<p className="w-45 mr-2">Blood Group</p>
+					<select className="border-1 px-2 py-[4px] rounded w-full md:w-1/5" onChange={bloodGroupQuery}>
 						<option>Choose Blood Group</option>
 						<option>A+</option>
 						<option>A-</option>
@@ -152,15 +152,16 @@ export default function MainInterface() {
 						<option>O-</option>
 					</select>
 				</div>
-				<div className="mb-2">
-					<p className="inline-block mr-2 w-30 mr-2">Current Location</p>
-					<input type="text" className="border-1 px-1 py-[2px] rounded" onChange={locationQuery}/>
+				<div className="mb-2 flex items-center">
+					<p className="mr-2 w-45 mr-2">Current Location</p>
+					<input type="text" className="border-1 px-1 py-[2px] rounded w-full md:w-1/2" onChange={locationQuery}/>
 				</div>
-				<div className="mb-2">
-					<p className="inline-block mr-2 w-30 mr-2">Donor's Name</p>
-					<input type="text" className="border-1 px-1 py-[2px] rounded" onChange={donorsNameQuery}/>
+				<div className="mb-2 flex items-center">
+					<p className="mr-2 w-45 mr-2">Donor's Name</p>
+					<input type="text" className="border-1 px-1 py-[2px] rounded w-full md:w-1/2" onChange={donorsNameQuery}/>
 				</div>
 			</div>
+			
 			<div className="mx-4 mt-4 text-sm">
 				{
 					filtered.length?
