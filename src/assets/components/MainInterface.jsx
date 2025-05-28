@@ -73,8 +73,8 @@ export default function MainInterface() {
 	// in the extracted search result
 	// you will find the use of this function in line (169 - 173).
 	function splittedText(text, searched) {
-		text = text.toLowerCase();
-		searched = searched.toLowerCase();
+		text = text.toLowerCase().trim();
+		searched = searched.toLowerCase().trim();
 		let arr = text.split(searched);
 		if (arr.length > 2) {
 			let lastElements = arr.filter((_, index)=> index>0)
