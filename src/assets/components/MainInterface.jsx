@@ -137,7 +137,7 @@ export default function MainInterface() {
 				</a>
 			</div>
 
-			<div className="text-sm mx-2 p-2 mt-6 bg-green-100">
+			<div className="text-sm mx-2 p-2 mt-6 bg-green-50">
 				<div className="mb-2 flex items-center">
 					<p className="w-45 mr-2">Blood Group</p>
 					<select className="border-1 px-2 py-[4px] rounded w-full md:w-1/5" onChange={bloodGroupQuery}>
@@ -161,7 +161,7 @@ export default function MainInterface() {
 					<input type="text" className="border-1 px-1 py-[2px] rounded w-full md:w-1/2" onChange={donorsNameQuery}/>
 				</div>
 			</div>
-			
+
 			<div className="mx-4 mt-4 text-sm">
 				{
 					filtered.length?
