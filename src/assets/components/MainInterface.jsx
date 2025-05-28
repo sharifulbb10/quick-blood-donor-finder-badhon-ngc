@@ -108,7 +108,7 @@ export default function MainInterface() {
 					<div className={`absolute w-[70vw] h-50 top-0 right-0 bg-zinc-800 ${menuOpened ? 'visible' : 'hidden'}`}>
 						<div className="mt-10 text-sm text-white font-light">
 							<section className="mx-5 mt-2 p-1"><a href="https://github.com/sharifulbb10/quick-blood-donor-finder-badhon-ngc" target="_blank" rel="noopener noreferrer">View Source Code & improve it</a></section>
-							<section className="mx-5 mt-4 p-1"><a href="#">Report a bug</a></section>
+							<section className="mx-5 mt-4 p-1"><a href="mailto:sharifulbb10@gmail.com?subject=Found a problem in your BADON QUICK DONOR FINDER project">Report a bug</a></section>
 							<section className="mx-5 mt-4 p-1"><a href="https://forms.gle/JrGsH6vggNQPkU2a9">Register as blood doner</a></section>
 						</div>
 					</div>
