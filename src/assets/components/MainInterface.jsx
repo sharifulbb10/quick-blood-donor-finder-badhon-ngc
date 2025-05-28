@@ -73,7 +73,16 @@ export default function MainInterface() {
 	// in the extracted search result
 	// you will find the use of this function in line (169 - 173).
 	function splittedText(text, searched) {
-		return searched ? text.toLowerCase().split(searched.toLowerCase()) : [text, "", ""];
+		text = text.toLowerCase();
+		searched = searched.toLowerCase();
+		let arr = text.split(searched);
+		if (arr.length > 2) {
+			let lastElements = arr.filter((_, index)=> index>0)
+			let newArr = [arr[0], lastElements.length === 1 ? lastElements[0]+searched : lastElements.join(searched)];
+			// console.log(newArr)
+			return newArr;
+		}
+		return searched ? arr : [text, "", ""];
 	}
 
 	// this function will evaluate if a user can donate blood or not, when he/she donated blood
