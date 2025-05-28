@@ -53,8 +53,8 @@ export default function MainInterface() {
 	const searchFunction = () => {
 		const filteredData = data.filter(eachItem => {
 			const isBloodGroupMatched = bloodGroup ? eachItem.includes(bloodGroup) : true;
-			const isLocationMatched = location.trim() ? eachItem[4].toLowerCase().includes(location.toLowerCase()) : true;
-			const isNameMatched = donorsName.trim() ? eachItem[2].trim().toLowerCase().includes(donorsName.toLowerCase()) : true;
+			const isLocationMatched = location.trim() ? eachItem[4].trim().toLowerCase().includes(location.trim().toLowerCase()) : true;
+			const isNameMatched = donorsName.trim() ? eachItem[2].trim().toLowerCase().includes(donorsName.trim().toLowerCase()) : true;
 
 			if (isBloodGroupMatched && isLocationMatched && isNameMatched) {
 				return true;
@@ -75,8 +75,9 @@ export default function MainInterface() {
 	function splittedText(text, searched) {
 		text = text.toLowerCase().trim();
 		searched = searched.toLowerCase().trim();
-		let arr = text.split(searched);
-		if (arr.length > 2) {
+		console.log("searched", searched);
+		let arr = searched ? text.split(searched) : null;
+		if (arr && arr.length > 2) {
 			let lastElements = arr.filter((_, index)=> index>0)
 			let newArr = [arr[0], lastElements.length === 1 ? lastElements[0]+searched : lastElements.join(searched)];
 			// console.log(newArr)
@@ -176,11 +177,11 @@ export default function MainInterface() {
 					filtered.length?
 						filtered.map((eachItem, index)=>
 							<p key={index} className="mt-2 bg-green-100 border border-green-300 p-[5px]">
-							Blood Group: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[3], bloodGroup)[0]}</span><span className="bg-yellow-200">{bloodGroup.toLowerCase()}</span><span>{splittedText(eachItem[3], bloodGroup)[1]}</span></span> <br/>
+							Blood Group: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[3], bloodGroup)[0]}</span><span className="bg-yellow-200">{bloodGroup.toLowerCase().trim()}</span><span>{splittedText(eachItem[3], bloodGroup)[1]}</span></span> <br/>
 
-							Name: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[2], donorsName)[0]}</span><span className="bg-yellow-200">{donorsName.toLowerCase()}</span><span>{splittedText(eachItem[2], donorsName)[1]}</span></span> <br/>
+							Name: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[2], donorsName)[0]}</span><span className="bg-yellow-200">{donorsName.toLowerCase().trim()}</span><span>{splittedText(eachItem[2], donorsName)[1]}</span></span> <br/>
 
-							Location: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[4], location)[0]}</span><span className="bg-yellow-200">{location.toLowerCase()}</span><span>{splittedText(eachItem[4], location)[1]}</span></span> <br/>
+							Location: <span className="capitalize text-red-800 font-medium"><span>{splittedText(eachItem[4], location)[0]}</span><span className="bg-yellow-200">{location.toLowerCase().trim()}</span><span>{splittedText(eachItem[4], location)[1]}</span></span> <br/>
 
 							Mobile No: <span className="text-red-800 font-medium">{eachItem[5]}</span> <br/>
 
