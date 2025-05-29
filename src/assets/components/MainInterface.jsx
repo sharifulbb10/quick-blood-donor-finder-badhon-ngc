@@ -31,7 +31,7 @@ export default function MainInterface() {
 	// this function is triggered when user will select a blood group
 	const bloodGroupQuery = (e) => {
 		// "Choose a blood group" is a default option, so no state update for this selection
-		e.target.value!=="Choose Blood Group" ? setBloodGroup(e.target.value) : setBloodGroup(null);
+		e.target.value!=="Choose Blood Group" ? setBloodGroup(e.target.value) : setBloodGroup("");
 	}
 
 	// this function will update the 'location' state, what user will type
